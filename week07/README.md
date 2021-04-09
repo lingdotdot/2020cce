@@ -1,6 +1,7 @@
 # 1 
 下載c tutor
 # 2
+字串順序比第五週更好的程式
 ```c
 #include <stdio.h>
 #include <string.h>
