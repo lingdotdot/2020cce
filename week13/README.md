@@ -63,3 +63,25 @@ void draw(){
    text("總秒數:"+total, 100,200); //並設定字型大小，然後印出來。
 }  
 ```
+# step 06 把倒數計時的時鐘完成做出來
+```Java
+void setup(){
+   size(1024,400); 
+   textFont(createFont("標楷體",50));
+}
+void draw(){
+   background(15,162,249);
+   textSize(50);
+   int h=hour();
+   int m=minute();
+   int s=second();
+   fill(255,0,0);
+   text("Now:"+ h+":"+m+":"+s,100,100);
+   int total=h*60*60+m*60+s;
+   int total2=12*60*60+0*60+0; //目標時間的總秒數
+   text("總秒數:"+total, 100,200);
+   int ans=total2-total; // 剩下的時間
+   int hh=ans/60/60%60,mm=ans/60%60,ss=ans%60; //再用找零錢的方法，把總秒數改成小時，分鐘和秒數的形式
+   text("還剩下:"+hh+":"+mm+":"+ss,100,300);//最後印出來結果，完成了!
+}  
+```
