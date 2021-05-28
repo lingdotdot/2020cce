@@ -67,3 +67,31 @@ void mousePressed(){
       int temp=a[i1];a[i1]=a[i2];a[i2]=temp;
 }
 ```
+# 05 做出大樂透的小程式，完成並且做出慢慢抽的假象，其實整組都已經抽出來了
+```C
+//大樂透 抽獎時，會掉下球， 49 球，挑6球
+///int []a;{1,2,3,4,5,6.......寫49很累，所以換for迴圈
+int []a=new int [49];//Java的陣列宣告
+void setup(){
+   size(400,200);
+   textSize(30); 
+   for(int i=0;i<49;i++) a[i]=i+1;
+   for(int i=0;i<10000;i++){//大作弊，抽獎前已經排好
+      int i1=(int )random(49), i2=(int )random(49);
+      int temp=a[i1];a[i1]=a[i2];a[i2]=temp;
+   }
+}
+int N=0;
+void draw(){
+   background(#2C9CF0);
+   for(int i=0;i<N;i++){
+       fill(255); ellipse(50+i*50,100,40,40);
+       textAlign(CENTER,CENTER);
+       fill(0); text(a[i], 50+i*50, 100);
+     }//大樂透 抽獎時，會掉下球，49球，掉6球
+}
+void mousePressed(){
+  N++;//其實數字早就準備好了，我們只是慢慢印出來
+  //讓人以為你是慢慢抽的。
+}
+
