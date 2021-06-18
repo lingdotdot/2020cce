@@ -66,7 +66,7 @@ void keyPressed(){//點一次做程序一次，小心有時打到
    if(key== BACKSPACE ) line=line.substring(0,len-1);
 }
 ```
-#
+#step02-3_老師解釋substring(開始,結束)的意思,很像for(int i=0;i小於26;i++)會做26次的右邊界不包含, 而且會有當機的問題,用len大於0來保護len不要變負的
 ```C
 void setup(){
    size(400,200);
